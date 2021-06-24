@@ -28,8 +28,22 @@ ramdisk_compression=auto;
 # import patching functions/variables - see for reference
 . tools/ak3-core.sh;
 
+aroma_get_value() {
+  [ -f /tmp/aroma/${1}.prop ] && cat /tmp/aroma/${1}.prop | head -n1 | cut -d'=' -f2 || echo ""
+}
+
 ## AnyKernel boot install
 split_boot;
+
+# Read value by user selected from aroma prop files
+fake_selenforce=$(aroma_get_value fake_selenforce)
+
+# fake enforcing mode
+if [ "$fake_selenforce" == "1" ]; then
+    patch_cmdline "androidboot.fakeselenforce" "androidboot.fakeselenforce=1"
+else
+    patch_cmdline "androidboot.fakeselenforce" ""
+fi
 
 flash_boot;
 ## end boot install

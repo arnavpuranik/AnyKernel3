@@ -31,6 +31,19 @@ viewbox(
     "@welcome"
 );
 
+# Next Button is "Install"
+ini_set("text_next", "Install");
+ini_set("icon_next", "@install");
+
+# Fake Enforcing Switch
+selectbox(
+    "Enable Fake Enforcing Mode\n",
+    "<@center><b>Select if your rom is permissive and you want to make it enforcing(fake).</b>\n\n</@>","@install",
+    "fake_selenforce.prop",
+    "Yes", "", 1,
+    "No", "", 0
+);
+
 # Next Button is "Next"
 ini_set("text_next", "Next");
 ini_set("icon_next", "@next");
