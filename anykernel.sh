@@ -36,7 +36,15 @@ aroma_get_value() {
 split_boot;
 
 # Read value by user selected from aroma prop files
+wiredbtn_altmode=$(aroma_get_value wiredbtn_altmode)
 fake_selenforce=$(aroma_get_value fake_selenforce)
+
+# alternate weired button mode
+if [ "$wiredbtn_altmode" == "2" ]; then
+    patch_cmdline "androidboot.wiredbtnaltmode" "androidboot.wiredbtnaltmode=1"
+else
+    patch_cmdline "androidboot.wiredbtnaltmode" ""
+fi
 
 # fake enforcing mode
 if [ "$fake_selenforce" == "1" ]; then

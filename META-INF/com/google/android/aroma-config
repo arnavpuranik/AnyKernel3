@@ -31,6 +31,15 @@ viewbox(
     "@welcome"
 );
 
+# Alternate wired button Switch
+selectbox(
+    "Alternate Headphone Button Mode\n",
+    "<@center><b>Select if your headphone buttons dont work properly in normal mode.</b>\n\n</@>","@install",
+    "wiredbtn_altmode.prop",
+    "Normal Mode", "", 1,
+    "Alternate Mode", "", 0
+);
+
 # Next Button is "Install"
 ini_set("text_next", "Install");
 ini_set("icon_next", "@install");
