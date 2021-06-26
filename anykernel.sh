@@ -35,6 +35,10 @@ aroma_get_value() {
 ## AnyKernel boot install
 split_boot;
 
+# extract Image and dtb
+xz -d ${home}/Image.xz || abort
+xz -d ${home}/kernel_dtb.xz || abort
+
 # Read value by user selected from aroma prop files
 cpu_overclock=$(aroma_get_value cpu_overclock)
 wiredbtn_altmode=$(aroma_get_value wiredbtn_altmode)
