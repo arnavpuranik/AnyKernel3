@@ -274,7 +274,7 @@ flash_boot() {
   else
     ramdisk=$(ls $split_img/ramdisk.cpio* 2>/dev/null | tail -n1);
   fi;
-  for fdt in dt recovery_dtbo dtb; do
+  for fdt in dt recovery_dtbo dtb kernel_dtb; do
     for i in $home/$fdt $home/$fdt.img $split_img/$fdt; do
       if [ -f $i ]; then
         eval local $fdt=$i;
@@ -309,7 +309,7 @@ flash_boot() {
     [ "$kernel" ] && cp -f $kernel kernel;
     [ "$ramdisk" ] && cp -f $ramdisk ramdisk.cpio;
     [ "$dt" -a -f extra ] && cp -f $dt extra;
-    for i in dtb recovery_dtbo; do
+    for i in dtb recovery_dtbo kernel_dtb; do
       [ "$(eval echo \$$i)" -a -f $i ] && cp -f $(eval echo \$$i) $i;
     done;
     case $kernel in
