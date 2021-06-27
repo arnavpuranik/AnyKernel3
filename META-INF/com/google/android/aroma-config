@@ -2,7 +2,7 @@ ini_set("kernel_name",             "KcufKernel");
 ini_set("kernel_version",          "1.0");
 ini_set("kernel_author",           "Shekhawat2");
 ini_set("kernel_device",           "WhyRed");
-ini_set("kernel_date",             "June, 28 2015");
+ini_set("kernel_date",             "June, 28 2021");
 
 anisplash(
     4,
