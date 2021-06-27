@@ -43,6 +43,7 @@ xz -d ${home}/kernel_dtb.xz || abort
 cpu_overclock=$(aroma_get_value cpu_overclock)
 wiredbtn_altmode=$(aroma_get_value wiredbtn_altmode)
 fake_selenforce=$(aroma_get_value fake_selenforce)
+newcam_blobs=$(aroma_get_value newcam_blobs)
 
 # cpu overclock
 if [ "$cpu_overclock" == "2" ]; then
@@ -63,6 +64,11 @@ if [ "$fake_selenforce" == "1" ]; then
     patch_cmdline "androidboot.fakeselenforce" "androidboot.fakeselenforce=1"
 else
     patch_cmdline "androidboot.fakeselenforce" ""
+fi
+
+# new camera blobs
+if [ "$newcam_blobs" == "2" ]; then
+    $bin/bspatch ${home}/Image ${home}/Image ${home}/bspatch/newcam.patch || abort
 fi
 
 flash_boot;

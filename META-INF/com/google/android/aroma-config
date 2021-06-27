@@ -32,8 +32,18 @@ selectbox(
     "CPU Overclock\n",
     "<@center><b>Select if you want CPU overclock upto 2.2G.</b>\n\n</@>","@install",
     "cpu_overclock.prop",
+
     "Keep Stock", "", 1,
     "Enable 2.2 Ghz", "", 0
+);
+
+# New Camera Blobs
+selectbox(
+    "Camera Blobs\n",
+    "<@center><b>Select if your rom has old/new camera blobs.</b>\n\n</@>","@install",
+    "newcam_blobs.prop",
+    "Old Camera Blobs", "", 1,
+    "New Camera Blobs", "", 0
 );
 
 # Alternate wired button Switch
