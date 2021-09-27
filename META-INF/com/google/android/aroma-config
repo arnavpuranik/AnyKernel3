@@ -1,8 +1,8 @@
-ini_set("kernel_name",             "KcufKernel");
-ini_set("kernel_version",          "1.0");
-ini_set("kernel_author",           "Shekhawat2");
-ini_set("kernel_device",           "WhyRed");
-ini_set("kernel_date",             "June, 28 2021");
+ini_set("kernel_name",             "Serum Kernel");
+ini_set("kernel_version",          "X1");
+ini_set("kernel_author",           "Arnav");
+ini_set("kernel_device",           "Whyred");
+ini_set("kernel_date",             "Sept, 28 2021");
 
 anisplash(
     4,
@@ -17,7 +17,7 @@ fontresload("1", "ttf/Roboto-Regular.ttf", "16");
 # STEP 2 - SHOW KERNEL INFORMATION
 viewbox(
     #-- Get Config Value
-    "KCUFKernel Installer",
+    "Serum Kernel Installer",
     "You are about to Install " + "<b>" + ini_get("kernel_name") + "</b>\n\n\n" +
     "Version\t\t: "       + "<b>" + ini_get("kernel_version") + "</b>\n" +
     "Developed By\t: "    + "<b>" + ini_get("kernel_author") + "</b>\n" +
@@ -27,20 +27,10 @@ viewbox(
     "@welcome"
 );
 
-# CPU Overclock Switch
-selectbox(
-    "CPU Overclock\n",
-    "<@center><b>Select if you want CPU overclock upto 2.2G.</b>\n\n</@>","@install",
-    "cpu_overclock.prop",
-
-    "Keep Stock", "", 1,
-    "Enable 2.2 Ghz", "", 0
-);
-
 # New Camera Blobs
 selectbox(
     "Camera Blobs\n",
-    "<@center><b>Select if your rom has old/new camera blobs.</b>\n\n</@>","@install",
+    "<@center><b>Select if your ROM has Old or New Camera blobs.</b>\n\n</@>","@install",
     "newcam_blobs.prop",
     "Old Camera Blobs", "", 1,
     "New Camera Blobs", "", 0
@@ -49,7 +39,7 @@ selectbox(
 # Alternate wired button Switch
 selectbox(
     "Alternate Headphone Button Mode\n",
-    "<@center><b>Select if your headphone buttons dont work properly in normal mode.</b>\n\n</@>","@install",
+    "<@center><b>Select If Your Headphone Buttons Don't Work Properly in Normal Mode.</b>\n\n</@>","@install",
     "wiredbtn_altmode.prop",
     "Normal Mode", "", 1,
     "Alternate Mode", "", 0
@@ -62,7 +52,7 @@ ini_set("icon_next", "@install");
 # Fake Enforcing Switch
 selectbox(
     "Enable Fake Enforcing Mode\n",
-    "<@center><b>Select if your rom is permissive and you want to make it enforcing(fake).</b>\n\n</@>","@install",
+    "<@center><b>Select If your ROM is Permissive and you want to make it Enforcing (fake).If your ROM is Enforcing by Default, select No!</b>\n\n</@>","@install",
     "fake_selenforce.prop",
     "Yes", "", 1,
     "No", "", 0
