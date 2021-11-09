@@ -40,9 +40,17 @@ xz -d ${home}/Image.xz || abort
 xz -d ${home}/kernel_dtb.xz || abort
 
 # Read value by user selected from aroma prop files
+cpu_overclock=$(aroma_get_value cpu_overclock)
 wiredbtn_altmode=$(aroma_get_value wiredbtn_altmode)
 fake_selenforce=$(aroma_get_value fake_selenforce)
 newcam_blobs=$(aroma_get_value newcam_blobs)
+
+# cpu overclock
+if [ "$cpu_overclock" == "2" ]; then
+	patch_cmdline "androidboot.cpuoverclock" "androidboot.cpuoverclock=1"
+else
+	patch_cmdline "androidboot.cpuoverclock" ""
+fi
 
 # alternate wired button mode
 if [ "$wiredbtn_altmode" == "2" ]; then
