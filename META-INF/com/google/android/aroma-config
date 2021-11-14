@@ -1,8 +1,8 @@
 ini_set("kernel_name",             "Serum Kernel");
-ini_set("kernel_version",          "X1");
+ini_set("kernel_version",          "X2");
 ini_set("kernel_author",           "Arnav");
 ini_set("kernel_device",           "Whyred");
-ini_set("kernel_date",             "Sept, 28 2021");
+ini_set("kernel_date",             "November, 14 2021");
 
 anisplash(
     4,
@@ -62,7 +62,7 @@ ini_set("icon_next", "@install");
 # Fake Enforcing Switch
 selectbox(
     "Enable Fake Enforcing Mode\n",
-    "<@center><b>Select If your ROM is Permissive and you want to make it Enforcing (fake).If your ROM is Enforcing by Default, select No!</b>\n\n</@>","@install",
+    "<@center><b>Select If your ROM is Permissive and you want to make it Enforcing (fake)! If your ROM is Enforcing by Default, select No!</b>\n\n</@>","@install",
     "fake_selenforce.prop",
     "Yes", "", 1,
     "No", "", 0
