@@ -27,12 +27,20 @@ viewbox(
     "@welcome"
 );
 
+# QTI haptics
+selectbox(
+    "QTI Haptics\n",
+    "<@center><b>Select if your ROM has QTI haptics.</b>\n\n</@>","@install",
+    "qti_haptics.prop",
+    "NO, Non-QTI haotics", "", 1,
+    "YES, QTI Haptics", "", 0
+);
+
 # CPU Overclock Switch
 selectbox(
     "CPU Overclock\n",
     "<@center><b>Select if you want CPU overclock upto 2.2G.</b>\n\n</@>","@install",
     "cpu_overclock.prop",
-
     "Keep Stock", "", 1,
     "Enable 2.2 Ghz", "", 0
 );

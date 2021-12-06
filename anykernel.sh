@@ -37,13 +37,20 @@ split_boot;
 
 # extract Image and dtb
 xz -d ${home}/Image.xz || abort
-xz -d ${home}/kernel_dtb.xz || abort
 
 # Read value by user selected from aroma prop files
 cpu_overclock=$(aroma_get_value cpu_overclock)
 wiredbtn_altmode=$(aroma_get_value wiredbtn_altmode)
 fake_selenforce=$(aroma_get_value fake_selenforce)
 newcam_blobs=$(aroma_get_value newcam_blobs)
+qti_haptics=$(aroma_get_value qti_haptics)
+
+# qti haptics
+if [ "$qti_haptics" == "2" ]; then
+	xz -dc ${home}/kernel_dtbqti.xz > ${home}/kernel_dtb || abort
+else
+	xz -dc ${home}/kernel_dtb.xz > ${home}/kernel_dtb || abort
+fi
 
 # cpu overclock
 if [ "$cpu_overclock" == "2" ]; then
