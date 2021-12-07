@@ -47,34 +47,43 @@ qti_haptics=$(aroma_get_value qti_haptics)
 
 # qti haptics
 if [ "$qti_haptics" == "2" ]; then
-	xz -dc ${home}/kernel_dtbqti.xz > ${home}/kernel_dtb || abort
+    ui_print "Selecting QTI Haptics"
+    xz -dc ${home}/kernel_dtbqti.xz > ${home}/kernel_dtb || abort
 else
-	xz -dc ${home}/kernel_dtb.xz > ${home}/kernel_dtb || abort
+    ui_print "Selecting Non-QTI Haptics"
+    xz -dc ${home}/kernel_dtb.xz > ${home}/kernel_dtb || abort
 fi
 
 # cpu overclock
 if [ "$cpu_overclock" == "2" ]; then
-	patch_cmdline "androidboot.cpuoverclock" "androidboot.cpuoverclock=1"
+    ui_print "Selecting OC Freqs"
+    patch_cmdline "androidboot.cpuoverclock" "androidboot.cpuoverclock=1"
 else
-	patch_cmdline "androidboot.cpuoverclock" ""
+    ui_print "Selecting Non-OC Freqs"
+    patch_cmdline "androidboot.cpuoverclock" ""
 fi
 
 # alternate wired button mode
 if [ "$wiredbtn_altmode" == "2" ]; then
+    ui_print "Selecting Alternate Wired Headphones Buttons"
     patch_cmdline "androidboot.wiredbtnaltmode" "androidboot.wiredbtnaltmode=1"
 else
+    ui_print "Selecting Normal Wired Headphones Buttons"
     patch_cmdline "androidboot.wiredbtnaltmode" ""
 fi
 
 # fake enforcing mode
 if [ "$fake_selenforce" == "1" ]; then
+    ui_print "Selecting Fake Enforcing Mode"
     patch_cmdline "androidboot.fakeselenforce" "androidboot.fakeselenforce=1"
 else
+    ui_print "Selecting No-Fake Enforcing Mode"
     patch_cmdline "androidboot.fakeselenforce" ""
 fi
 
 # new camera blobs
 if [ "$newcam_blobs" == "2" ]; then
+    ui_print "Selecting New Camera Blobs"
     $bin/bspatch ${home}/Image ${home}/Image ${home}/bspatch/newcam.patch || abort
 fi
 
