@@ -1,8 +1,8 @@
 ini_set("kernel_name",             "Serum Kernel");
-ini_set("kernel_version",          "X2");
+ini_set("kernel_version",          "X2.5");
 ini_set("kernel_author",           "Arnav");
 ini_set("kernel_device",           "Whyred");
-ini_set("kernel_date",             "November, 14 2021");
+ini_set("kernel_date",             "January, 06 2022");
 
 anisplash(
     4,
@@ -23,7 +23,6 @@ viewbox(
     "Developed By\t: "    + "<b>" + ini_get("kernel_author") + "</b>\n" +
     "On Date\t\t: "       + "<b>" + ini_get("kernel_date") + "</b>\n" +
     "For Device\t: "      + "<b>" + ini_get("kernel_device") + "</b>\n",
-    #-- Icon
     "@welcome"
 );
 
