@@ -1,8 +1,8 @@
 ini_set("kernel_name",             "Serum Kernel");
-ini_set("kernel_version",          "X2.5");
+ini_set("kernel_version",          "X2.6");
 ini_set("kernel_author",           "Arnav");
 ini_set("kernel_device",           "Whyred");
-ini_set("kernel_date",             "January, 06 2022");
+ini_set("kernel_date",             "January, 11 2022");
 
 anisplash(
     4,
@@ -31,7 +31,7 @@ selectbox(
     "QTI Haptics\n",
     "<@center><b>Select if your ROM has QTI haptics.</b>\n\n</@>","@install",
     "qti_haptics.prop",
-    "NO, Non-QTI haotics", "", 1,
+    "NO, Non-QTI haptics", "", 1,
     "YES, QTI Haptics", "", 0
 );
 
