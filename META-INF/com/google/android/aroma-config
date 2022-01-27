@@ -1,8 +1,7 @@
-ini_set("kernel_name",             "Serum Kernel");
-ini_set("kernel_version",          "X2.6");
+ini_set("kernel_name",             "Nexus Kernel");
 ini_set("kernel_author",           "Arnav");
 ini_set("kernel_device",           "Whyred");
-ini_set("kernel_date",             "January, 11 2022");
+ini_set("kernel_date",             "January, 28 2022");
 
 anisplash(
     4,
@@ -17,9 +16,8 @@ fontresload("1", "ttf/Roboto-Regular.ttf", "16");
 # STEP 2 - SHOW KERNEL INFORMATION
 viewbox(
     #-- Get Config Value
-    "Serum Kernel Installer",
+    "Nexus Kernel Installer",
     "You are about to Install " + "<b>" + ini_get("kernel_name") + "</b>\n\n\n" +
-    "Version\t\t: "       + "<b>" + ini_get("kernel_version") + "</b>\n" +
     "Developed By\t: "    + "<b>" + ini_get("kernel_author") + "</b>\n" +
     "On Date\t\t: "       + "<b>" + ini_get("kernel_date") + "</b>\n" +
     "For Device\t: "      + "<b>" + ini_get("kernel_device") + "</b>\n",

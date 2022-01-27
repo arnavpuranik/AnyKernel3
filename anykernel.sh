@@ -4,7 +4,7 @@
 ## AnyKernel setup
 # begin properties
 properties() { '
-kernel.string=Serum Kernel by Arnav
+kernel.string=neXus Kernel by Arnav
 do.devicecheck=1
 do.modules=0
 do.systemless=1
